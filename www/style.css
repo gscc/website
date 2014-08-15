@@ -1,0 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
+
+body {
+	background-image: url(warren.jpeg);
+	background-size: cover;
+}
+
+h1 {
+	color: white;
+	text-shadow: 0 0 8px black;
+	font-family: "Roboto Slab", sans-serif;
+	font-weight: 300;
+	font-size: 50px;
+	position: absolute;
+	bottom: -15px;
+	right: 30px;
+}
