@@ -1207,4 +1207,217 @@ body .markdown-body
 </pre></div>
 </td></tr></table>
 
-<h3 id="8-more-to-come"><em>8. More to come&hellip;</em></h3></article></body></html>
+<h3 id="8-booleans-and-if-statements"><a name="user-content-8-booleans-and-if-statements" href="#8-booleans-and-if-statements" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>8. Booleans and If Statements</h3>
+<p>A boolean is a value that is either <code>True</code> or <code>False</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">sid_likes_pepsi</span> <span class="o">=</span> <span class="k">True</span>
+</pre></div>
+</td></tr></table>
+
+<p>That&rsquo;s neat, but not very useful. What if we wanted to run some code only if a condition is true? Let&rsquo;s use an <code>if</code> statement:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">if</span> <span class="n">sid_likes_pepsi</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid likes Pepsi&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>An <code>if</code> statement only runs the code in its suite if <code>&lt;condition&gt;</code> is <code>True</code>.</p>
+<div class="codehilite"><pre><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>So, this wouldn&rsquo;t print anything:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">sid_likes_pepsi</span> <span class="o">=</span> <span class="k">False</span>
+<span class="k">if</span> <span class="n">sid_likes_pepsi</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid likes Pepsi&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>What if we wanted to do something else if a condition <em>isn&rsquo;t</em> true?</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">if</span> <span class="n">sid_likes_pepsi</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid likes Pepsi&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Sid doesn&#39;t like Pepsi&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>If <code>sid_likes_pepsi</code> is <code>True</code>, the <code>if</code> statement runs the first suite. Otherwise, it runs the second.</p>
+<p>There is another form within the <code>if</code> statement: <code>elif</code>. (You can think of it as else-if.)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">sid_likes_pepsi</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">ellie_likes_pepsi</span> <span class="o">=</span> <span class="k">True</span>
+
+<span class="k">if</span> <span class="n">sid_likes_pepsi</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid likes Pepsi&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">ellie_likes_pepsi</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Sid doesn&#39;t like Pepsi, but Ellie does&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid and Ellie both dislike Pepsi&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Change the <code>sid_likes_pepsi</code> and <code>ellie_likes_pepsi</code> variables above and see if you can predict what Python will print.</p>
+<h3 id="9-comparison-and-boolean-operations"><a name="user-content-9-comparison-and-boolean-operations" href="#9-comparison-and-boolean-operations" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>9. Comparison and Boolean Operations</h3>
+<p>How can we tell if two values are equal? With the <code>==</code> operation.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>We can test any two values for equality.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s">&#39;6&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="s">&#39;6&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">==</span> <span class="s">&#39;6&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>There are also other operations that return boolean values:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!=</code></td>
+<td>not equal</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>less than</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>less than or equal</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>greater than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>greater than or equal</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>   <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>   <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># False</span>
+</pre></div>
+
+
+<p>These operations return a value of either <code>True</code> or <code>False</code>. This means that we can use them in an <code>if</code> statement.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">gs</span> <span class="o">=</span> <span class="mi">1893</span>
+<span class="k">if</span> <span class="n">gs</span> <span class="o">==</span> <span class="mi">1893</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;George School was founded in 1893&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>What if we want to combine multiple boolean values? There are three boolean operations for this: <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+<p><code>and</code> works in this way: it first checks the value on its left. If it is false, it is returned. Else, it returns the value on its right. That might sound confusing, so seeing it in action may make more sense:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">print</span><span class="p">(</span><span class="k">True</span> <span class="ow">and</span> <span class="k">True</span><span class="p">)</span>    <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">False</span> <span class="ow">and</span> <span class="k">False</span><span class="p">)</span>  <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">True</span> <span class="ow">and</span> <span class="k">False</span><span class="p">)</span>   <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">False</span> <span class="ow">and</span> <span class="k">True</span><span class="p">)</span>   <span class="c"># False</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>or</code> works differently. If the value on its left is true, it is returned. Else, it returns the value on its right.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">print</span><span class="p">(</span><span class="k">True</span> <span class="ow">or</span> <span class="k">True</span><span class="p">)</span>    <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">False</span> <span class="ow">or</span> <span class="k">False</span><span class="p">)</span>  <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">True</span> <span class="ow">or</span> <span class="k">False</span><span class="p">)</span>   <span class="c"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">False</span> <span class="ow">or</span> <span class="k">True</span><span class="p">)</span>   <span class="c"># True</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>not</code> is the simplest of the bunch. If it is given a false value, it returns <code>True</code>. Else, it returns <code>False</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="k">True</span><span class="p">)</span>   <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="k">False</span><span class="p">)</span>  <span class="c"># True</span>
+</pre></div>
+</td></tr></table>
+
+<p>Let&rsquo;s combine a bunch of these concepts. Try to predict the output before running this code:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">sid_likes_pepsi</span> <span class="o">=</span> <span class="k">True</span>
+<span class="n">sid_is_thirsty</span> <span class="o">=</span> <span class="k">True</span>
+<span class="n">pepsi_in_stock</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">coke_in_stock</span> <span class="o">=</span> <span class="k">True</span>
+
+<span class="k">if</span> <span class="n">sid_is_thirsty</span> <span class="ow">and</span> <span class="n">coke_in_stock</span> <span class="ow">or</span> <span class="n">pepsi_in_stock</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid will be able to get a drink&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sid_likes_pepsi</span> <span class="ow">and</span> <span class="n">pepsi_in_stock</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid is happy because he can get a Pepsi :)&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">sid_likes_pepsi</span> <span class="ow">and</span> <span class="n">coke_in_stock</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid will have to settle for a Coke&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">pepsi_in_stock</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid gets a Pepsi&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">coke_in_stock</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Sid gets a Coke&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">sid_is_thirsty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Sid is thirsty but can&#39;t get a drink :(&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Sid is not thirsty&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>There is a lot going on here. To check your understanding, change the four boolean variables and try to predict the output.</p>
+<h2 id="challenge-problems"><a name="user-content-challenge-problems" href="#challenge-problems" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Challenge Problems</h2>
+<p>These are some problems that you are able to solve. Each can be solved in multiple ways. See Sid if you have any queations or to check if you&rsquo;ve written correct code.</p>
+<h4 id="repeat"><a name="user-content-repeat" href="#repeat" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Repeat</h4>
+<p>Create a function <code>repeat</code> that takes two arguments: a string, and the number of times it will be printed. Example usage:</p>
+<div class="codehilite"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">repeat</span><span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">hello</span>
+<span class="n">hello</span>
+<span class="n">hello</span>
+</pre></div></article></body></html>
