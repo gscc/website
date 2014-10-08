@@ -1196,17 +1196,6 @@ body .markdown-body
 </pre></div>
 </td></tr></table>
 
-<p>You can combine a bunch of things you’ve learned like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;hello &#39;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
-
-<span class="n">hello</span><span class="p">(</span><span class="s">&#39;world&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-
 <h3 id="8-booleans-and-if-statements"><a name="user-content-8-booleans-and-if-statements" href="#8-booleans-and-if-statements" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>8. Booleans and If Statements</h3>
 <p>A boolean is a value that is either <code>True</code> or <code>False</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">sid_likes_pepsi</span> <span class="o">=</span> <span class="k">True</span>
@@ -1412,12 +1401,81 @@ body .markdown-body
 </td></tr></table>
 
 <p>There is a lot going on here. To check your understanding, change the four boolean variables and try to predict the output.</p>
+<h3 id="10-functions-with-return"><a name="user-content-10-functions-with-return" href="#10-functions-with-return" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>10. Functions with <code>return</code></h3>
+<p>So far, we&rsquo;ve used functions with <code>print</code>. What if we wanted to write a function that evaluates to a value? With the <code>return</code> statement:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add_one</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c"># 4</span>
+</pre></div>
+</td></tr></table>
+
+<p>Using <code>return</code> causes a function to evaluate to a specific value. We&rsquo;ve already seen evaluation:</p>
+<div class="codehilite"><pre><span class="mi">3</span>         <span class="c"># 3</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>     <span class="c"># 4</span>
+<span class="s">&#39;hello&#39;</span>   <span class="c"># &#39;hello&#39;</span>
+<span class="ow">not</span> <span class="k">True</span>  <span class="c"># False</span>
+</pre></div>
+
+
+<p>So, by using <code>return</code>, we can cause our own functions to evaluate to a specific value.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a boolean indicating whether x is an even number.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c"># Modulo operator (returns the remainder after dividing)</span>
+        <span class="k">return</span> <span class="k">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c"># True</span>
+</pre></div>
+</td></tr></table>
+
+<p>Every function in Python has a return value. If a function doesn&rsquo;t have a <code>return</code> statement, Python automatically returns <code>None</code> (a value that indicates nothing). For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span class="k">def</span> <span class="nf">print_addition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+    <span class="c"># No return statement here!</span>
+
+<span class="n">print_addition</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>         <span class="c"># 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="k">None</span><span class="p">)</span>                  <span class="c"># None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_addition</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c"># 5 and then None</span>
+</pre></div>
+</td></tr></table>
+
+<p>Why does Python print <code>5</code> and then <code>None</code>? Because Python evaluates <code>print_addition</code>, which prints <code>5</code> and returns a value of <code>None</code>, which is then printed by <code>print</code>. Remember, every function without <code>return</code> will automatically return <code>None</code>.</p>
+<p>The last example is tricky, so please ask if you would like me to explain it!</p>
 <h2 id="challenge-problems"><a name="user-content-challenge-problems" href="#challenge-problems" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Challenge Problems</h2>
-<p>These are some problems that you are able to solve. Each can be solved in multiple ways. See Sid if you have any queations or to check if you&rsquo;ve written correct code.</p>
+<p>These are some problems that you are able to solve. Each can be solved in multiple ways. See Sid if you have any questions or to check if you&rsquo;ve written correct code.</p>
 <h4 id="repeat"><a name="user-content-repeat" href="#repeat" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Repeat</h4>
-<p>Create a function <code>repeat</code> that takes two arguments: a string, and the number of times it will be printed. Example usage:</p>
+<p>Create a function <code>repeat</code> that takes two arguments: a string, and the number of times it should be printed. Example usage:</p>
 <div class="codehilite"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">repeat</span><span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">hello</span>
 <span class="n">hello</span>
 <span class="n">hello</span>
+</pre></div>
+
+
+<h4 id="triangular-numbers"><a name="user-content-triangular-numbers" href="#triangular-numbers" class="headeranchor-link"  aria-hidden="true"><span class="headeranchor"></span></a>Triangular numbers</h4>
+<p>Write a function <code>triangle</code> that takes in a positive integer <code>x</code> and returns the sum of all integers from 0 to <code>x</code>.</p>
+<div class="codehilite"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">triangle</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="mi">91</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">triangle</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="mi">21</span>
 </pre></div></article></body></html>
