@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300);
+
+body {
+	color: white;
+	text-shadow: 0 0 8px black;
+	font-family: "Roboto Slab", sans-serif;
+	margin: 0;
+}
+
+.background {
+	background-image: url(warren-blur.png);
+	background-size: cover;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.warren-background {
+	background-image: url(warren.jpeg);
+	display: none;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 50px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+p {
+	margin-top: 6;
+	margin-bottom: 6;
+	text-shadow: 0 0 5px black;
+}
+
+#content {
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	text-align: right;
+	font-size: 150%;
+}
+
+a, a:visited {
+	color: white;
+}
